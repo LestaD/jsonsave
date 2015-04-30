@@ -1,0 +1,24 @@
+{
+  "name": "jsonsave",
+  "version": "1.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LestaD/jsonsave.git"
+  },
+  "keywords": [
+    "json",
+    "file",
+    "save"
+  ],
+  "author": "LestaD",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LestaD/jsonsave/issues"
+  },
+  "homepage": "https://github.com/LestaD/jsonsave#readme"
+}
