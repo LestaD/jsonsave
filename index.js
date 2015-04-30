@@ -49,4 +49,15 @@ JsonFile.prototype.save = function() {
 };
 
 
+
+JsonFile.prototype.saveAs = function(file) {
+	if (fs.existsSync(this.file) && !this.options.overwrite) {
+		return false;
+	}
+
+	var tmp = this.options.pretty ? JSON.stringify(this.$, 0, 2) : JSON.stringify(this.$);
+	return fs.writeFileSync(file, tmp, {encoding: this.options.encoding});
+}
+
+
 module.exports.File = JsonFile;
