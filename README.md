@@ -1,5 +1,6 @@
 # README
 
+ [![NPM](https://nodei.co/npm/jsonsave.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/jsonsave/)
 
 ## Using
 You can open `.json` file, edit and save with simple methods
