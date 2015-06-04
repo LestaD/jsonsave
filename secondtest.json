@@ -1,0 +1,13 @@
+{
+  "version": 5,
+  "obj": {
+    "sub": 2,
+    "ex": 4,
+    "subsub": {
+      "org": 555,
+      "next": true,
+      "mustreplace": "WOWOW!"
+    }
+  },
+  "s": 8
+}

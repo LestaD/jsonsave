@@ -1,8 +1,8 @@
 {
   "name": "jsonsave",
-  "version": "1.1.2",
+  "version": "2.0.0",
   "description": "Simple open, edit and save .json files",
-  "main": "index.js",
+  "main": "jsonsave.js",
   "scripts": {
     "test": "node test.js"
   },
@@ -16,9 +16,12 @@
     "save"
   ],
   "author": "LestaD",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/LestaD/jsonsave/issues"
   },
-  "homepage": "https://github.com/LestaD/jsonsave#readme"
+  "homepage": "https://github.com/LestaD/jsonsave#readme",
+  "devDependencies": {
+    "conlog": "0.0.9"
+  }
 }
