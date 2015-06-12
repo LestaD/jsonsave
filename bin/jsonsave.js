@@ -17,6 +17,9 @@ Json.new = function(fo) {
     ob[file] = fo;
     Json.load(ob);
   }
+  else if (fo instanceof Array) {
+    throw new Error('Can not create object from array');
+  }
   else if (typeof fo === "object") {
     // create object from fo
     ob = Json[make](fo);

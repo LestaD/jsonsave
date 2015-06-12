@@ -1,6 +1,6 @@
 var json = process.env.COVERAGE
-           ? require('../jsonsave-cov.js')
-           : require('../jsonsave.js');
+           ? require('../coverage/jsonsave.js')
+           : require('../bin/jsonsave.js');
 
 var should = require('should');
 var fs = require('fs');
@@ -113,7 +113,33 @@ describe('jsonsave', function(){
       should(js.weapon).have.property('name', object.weapon.name);
     });
 
-    
+    it('drop create object from number', function(){
+      should(function(){
+        json.new(1);
+      }).throw('Undefined type number')
+    });
+
+    it('drop create object from array', function(){
+      should(function(){
+        json.new([12,12]);
+      }).throw('Can not create object from array')
+    });
+
+    it('drop create object from Boolean', function(){
+      should(function(){
+        json.new(true);
+      }).throw('Undefined type boolean');
+
+      should(function(){
+        json.new(false);
+      }).throw('Undefined type boolean');
+    });
+
+    it('drop create object from Function', function(){
+      should(function(){
+        json.new(function(){});
+      }).throw('Undefined type function');
+    });
   });
 
 
