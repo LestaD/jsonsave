@@ -141,7 +141,67 @@ describe('jsonsave', function(){
       }).throw('Undefined type function');
     });
   });
+  
+  describe('.$$saveAs', function(){
 
+    var f = json.new({});
+    f.$$saveAs = __dirname + '/save-test.json';
+    it('should save to file', function(){
+      var stat;
+      should(function(){
+        stat = fs.statSync(__dirname + '/save-test.json');
+      }).not.throw();
+      should(stat).not.empty;
+      stat.isFile().should.be.True;
+    });
+
+    var rj;
+    it('should file is json', function(){
+      var content = fs.readFileSync(__dirname + '/save-test.json', 'utf8');
+      should(content).not.empty;
+      should(function(){
+        rj = JSON.parse(content);
+      }).not.throw();
+    });
+
+    it('should saved object is clear', function(){
+      should(Object.keys(rj).length).equal(0);
+    });
+
+    it('should save not empty object', function(){
+      f.very_long_var = "String string string";
+      f.integerest = 182753761423;
+      f.floatist = 615234615.871625365142;
+      f.booleandr = true;
+      f.arrayble = [ 'Stringable', 1827635 ];
+      f.objectile = { 'spaced var': "Stringe", 'two spaced var': 172653.162534 };
+      f.$$saveAs = __dirname + '/save-test.json';
+
+      rj = null;
+      should(function(){
+        rj = JSON.parse( fs.readFileSync(__dirname + '/save-test.json', 'utf8') );
+      }).not.throw();
+
+      should(Object.keys(rj).length).equal(Object.keys(f).length);
+
+      rj.very_long_var.should.equal(f.very_long_var).and.be.String;
+      rj.integerest.should.equal(f.integerest).and.be.Number;
+      rj.floatist.should.equal(f.floatist).and.be.Number;
+      rj.booleandr.should.equal(f.booleandr).and.be.Boolean;
+
+      rj.arrayble.should.be.Array;
+      rj.arrayble.length.should.equal(f.arrayble.length);
+      rj.arrayble[0].should.equal(f.arrayble[0]);
+      rj.arrayble[1].should.equal(f.arrayble[1]);
+
+      rj.objectile.should.be.Object;
+      should(Object.keys(rj.objectile).length).equal(Object.keys(f.objectile).length);
+      rj.objectile.should.property('spaced var', f.objectile['spaced var']).and.be.String;
+      rj.objectile.should.property('two spaced var', f.objectile['two spaced var']).and.be.Number;
+
+      fs.unlinkSync(__dirname + '/save-test.json');
+    });
+  });
 
 
 });
