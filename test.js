@@ -4,6 +4,8 @@ var __c = require('conlog')('jsonsave');
 var _file = __dirname + '/thetest.json';
 var _sec = __dirname + '/secondtest.json';
 
+var f = json.new("./asidhajsdhas.json");
+
 
 "create from file".log();
 var f1 = json.new(_file);

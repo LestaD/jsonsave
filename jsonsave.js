@@ -37,7 +37,7 @@ Json.new = function(fo) {
  * Create nude object from base object
  * If Json[clean] == false
  *     Add custom methods
- *     
+ *
  * @param  {Object} o
  * @return {NudeObject} generated object
  */
@@ -56,7 +56,7 @@ Json[make] = function(o) {
 
 /**
  * Set symb for clean create object
- * 
+ *
  */
 Object.defineProperty(Json, 'clean', {
   __proto__: null,
@@ -67,7 +67,7 @@ Object.defineProperty(Json, 'clean', {
 });
 
 /**
- * Try save file to 
+ * Try save file to
  * @param  {NudeObject} object
  * @param  {String} file
  */
@@ -82,7 +82,7 @@ Json.save = function(object) {
 };
 
 /**
- * 
+ *
  * @param  {NudeObject} object
  * @param  {string} file
  */
@@ -127,7 +127,7 @@ Json.merge = function(object, second, addonly) {
 
 /**
  * Load data from file and set inside
- * 
+ *
  * @param {NudeObject} object
  * @param {Boolean} merge  If true merge with exists
  *                         If false replace
