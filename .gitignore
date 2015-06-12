@@ -1,1 +1,5 @@
 node_modules/*
+
+# Coverate files
+*-cov.js
+coverage.html

@@ -1,4 +1,7 @@
-var json = require('../jsonsave.js');
+var json = process.env.COVERAGE
+           ? require('../jsonsave-cov.js')
+           : require('../jsonsave.js');
+
 var should = require('should');
 var fs = require('fs');
 
