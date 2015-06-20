@@ -10,7 +10,7 @@ var json = require('jsonsave');
 
 var manifest = json.new(__dirname + '/manifest.json');
 manifest.version = ++manifest.version;
-manifest.$$save;
+manifest.$$save();
 ```
 
 
@@ -19,18 +19,18 @@ manifest.$$save;
 ```javascript
 var file = json.new('/path/to/file.json');
 
-file.$$merge = { name: "John", last: "Snow" };
-file.$$saveAs = '/another/path/to/file.json';
+file.$$merge({ name: "John", last: "Snow" });
+file.$$saveAs('/another/path/to/file.json');
 ```
 
 ## Insert and merge
 ```javascript
 var bastard = json.new({name: "Jon"});
 
-bastard.$$merge = {name: John}; // now bastard.name === "John"
-bastard.$$insert = {last: "Snow", name: "WOW"}; // now {name: "John", last: "Snow"};
+bastard.$$merge({name: John}); // now bastard.name === "John"
+bastard.$$insert({last: "Snow", name: "WOW"}); // now {name: "John", last: "Snow"};
 
-bastard.$$saveAs = "/game_of_thrones/westeros/north/stark/bastard.json";
+bastard.$$saveAs("/game_of_thrones/westeros/north/stark/bastard.json");
 ```
 
 ## Clean objects
