@@ -13,6 +13,9 @@ manifest.version = ++manifest.version;
 manifest.$$save();
 ```
 
+Methods starts with `$$` does not save in json file.
+
+
 
 ## Save as
 
