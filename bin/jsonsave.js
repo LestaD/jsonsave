@@ -163,39 +163,43 @@ function Json_assign(object) {
   Object.defineProperty(object, '$$save', {
     enumerable: false,
     get: function() {
-      Json.save(this);
-      return this;
+      var that = this;
+      return function() {
+        return Json.save(that)
+      };
     }
   });
 
   Object.defineProperty(object, '$$saveAs', {
     enumerable: false,
-    set: function(v) {
-      Json.saveAs(this, v);
-      return this;
+    get: function() {
+      var that = this;
+      return function(another){
+        return Json.saveAs(that, another);
+      };
     }
   });
 
   Object.defineProperty(object, '$$merge', {
     enumerable: false,
-    set: function(obj) {
-      Json.merge(this, obj);
-      return this;
+    get: function() {
+      var that = this;
+      return function(newobject) {
+        return Json.merge(that, newobject);
+      };
     }
   });
 
   Object.defineProperty(object, '$$insert', {
     enumerable: false,
-    set: function(obj) {
-      Json.merge(this, obj, true);
-      return this;
+    get: function() {
+      var that = this;
+      return function(newobject) {
+        return Json.merge(that, newobject, true);
+      };
     }
   });
-
-
 }
-
-
 
 
 module.exports = (function() {

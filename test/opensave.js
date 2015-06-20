@@ -61,36 +61,33 @@ describe('jsonsave', function(){
     describe('in created object', function(){
       it('should have $$save', function(){
         var js = json.new(__dirname + '/test1.json');
-        should(js).have.property('$$save');
+        should(js).have.property('$$save').and.be.Function;
       });
 
       it('should have $$saveAs', function(){
         var js = json.new(__dirname + '/test1.json');
-        should(js).have.property('$$saveAs');
+        should(js).have.property('$$saveAs').and.be.Function;
       });
 
       it('should have $$merge', function(){
         var js = json.new(__dirname + '/test1.json');
-        should(js).have.property('$$merge');
+        should(js).have.property('$$merge').and.be.Function;
       });
 
       it('should have $$insert', function(){
         var js = json.new(__dirname + '/test1.json');
-        should(js).have.property('$$insert');
+        should(js).have.property('$$insert').and.be.Function;
       });
 
       it('should methods with $$ not enumerable', function(){
         var js = json.new(__dirname + '/test1.json');
 
-        should(js).have.property('$$save').not.be.a.Function;
-        should(js).have.property('$$saveAs').not.be.a.Function;
-        should(js).have.property('$$merge').not.be.a.Function;
-        should(js).have.property('$$insert').not.be.a.Function;
-
-        should(js['$$save']).be.empty;
-        should(js['$$saveAs']).be.empty;
-        should(js['$$merge']).be.empty;
-        should(js['$$insert']).be.empty;
+        for (var key in js) {
+          should(key).be.not.exactly('$$save');
+          should(key).be.not.exactly('$$saveAs');
+          should(key).be.not.exactly('$$merge');
+          should(key).be.not.exactly('$$insert');
+        }
       });
     });
     
@@ -145,7 +142,7 @@ describe('jsonsave', function(){
   describe('.$$saveAs', function(){
 
     var f = json.new({});
-    f.$$saveAs = __dirname + '/save-test.json';
+    f.$$saveAs(__dirname + '/save-test.json');
     it('should save to file', function(){
       var stat;
       should(function(){
@@ -175,7 +172,7 @@ describe('jsonsave', function(){
       f.booleandr = true;
       f.arrayble = [ 'Stringable', 1827635 ];
       f.objectile = { 'spaced var': "Stringe", 'two spaced var': 172653.162534 };
-      f.$$saveAs = __dirname + '/save-test.json';
+      f.$$saveAs(__dirname + '/save-test.json');
 
       rj = null;
       should(function(){
