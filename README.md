@@ -5,9 +5,10 @@
  ![Mocha Testing](https://img.shields.io/badge/build-passing-brightgreen.svg)
  ![Dependencies](https://david-dm.org/lestad/jsonsave.svg)
  ![npm version](https://badge.fury.io/js/jsonsave.svg)
- [![Code Climate](https://codeclimate.com/github/LestaD/jsonsave/badges/gpa.svg)](https://codeclimate.com/github/LestaD/jsonsave)
- ![](https://img.shields.io/github/downloads/lestad/jsonsave/latest/total.svg)
- [![npm](https://img.shields.io/npm/dm/jsonsave.svg)](http://npmjs.com/jsonsave)
+ ![Code Climate](https://codeclimate.com/github/LestaD/jsonsave/badges/gpa.svg)
+ ![Latest](https://img.shields.io/github/downloads/lestad/jsonsave/latest/total.svg)
+ ![npm](https://img.shields.io/npm/dm/jsonsave.svg)
+ ![GitHub tag](https://img.shields.io/github/tag/lestad/jsonsave.svg)
  
 
 ## Usage
