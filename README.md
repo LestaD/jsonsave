@@ -5,6 +5,8 @@
  ![Mocha Testing](https://img.shields.io/badge/build-passing-brightgreen.svg)
  ![Dependencies](https://david-dm.org/lestad/jsonsave.svg)
  ![npm version](https://badge.fury.io/js/jsonsave.svg)
+ [![Code Climate](https://codeclimate.com/github/LestaD/jsonsave/badges/gpa.svg)](https://codeclimate.com/github/LestaD/jsonsave)
+ 
 
 ## Usage
 You can open `.json` file, edit and save with simple methods
