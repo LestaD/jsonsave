@@ -1,6 +1,9 @@
 # README
 
  [![NPM](https://nodei.co/npm/jsonsave.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/jsonsave/)
+ 
+ ![Mocha Testing](https://img.shields.io/badge/build-passing-brightgreen.svg)
+ ![Dependencies](https://david-dm.org/lestad/jsonsave.svg)
 
 ## Usage
 You can open `.json` file, edit and save with simple methods
