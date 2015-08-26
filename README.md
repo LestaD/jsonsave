@@ -6,6 +6,7 @@
  ![Dependencies](https://david-dm.org/lestad/jsonsave.svg)
  ![npm version](https://badge.fury.io/js/jsonsave.svg)
  [![Code Climate](https://codeclimate.com/github/LestaD/jsonsave/badges/gpa.svg)](https://codeclimate.com/github/LestaD/jsonsave)
+ ![](https://img.shields.io/github/downloads/lestad/jsonsave/latest/total.svg)
  
 
 ## Usage
