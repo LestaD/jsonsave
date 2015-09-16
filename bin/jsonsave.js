@@ -9,52 +9,52 @@ var make = Symbol('make');
 
 Json[clean] = false;
 
-Json.new = function(fo) {
-  var ob = null;
+Json.new = function(file_object) {
+  var res_obj = null;
 
-  if (typeof fo === "string") {
-    ob = Json[make]({});
-    ob[file] = fo;
-    Json.load(ob);
+  if (typeof file_object === "string") {
+    res_obj = Json[make]({});
+    res_obj[file] = file_object;
+    Json.load(res_obj);
   }
-  else if (fo instanceof Array) {
+  else if (file_object instanceof Array) {
     throw new Error('Can not create object from array');
   }
-  else if (typeof fo === "object") {
-    // create object from fo
-    ob = Json[make](fo);
+  else if (typeof file_object === "object") {
+    // create object from file_object
+    res_obj = Json[make](file_object);
   }
-  else if (typeof fo === "undefined") {
+  else if (typeof file_object === "undefined") {
     // create empty
-    ob = Json[make]({});
+    res_obj = Json[make]({});
   }
   else {
-    throw new Error('Undefined type ' + typeof fo);
+    throw new Error('Undefined type ' + typeof file_object);
   }
 
   Json[clean] = false;
-  return ob;
+  return res_obj;
 };
 
 /**
  * Create nude object from base object
- * If Json[clean] == false
+ * If Json[clean] === false
  *     Add custom methods
  *
- * @param  {Object} o
+ * @param  {Object} obj
  * @return {NudeObject} generated object
  */
-Json[make] = function(o) {
-  var s = Object.create(null);
-  for (var key in o) {
-    s[key] = o[key];
+Json[make] = function(obj) {
+  var res = Object.create(null);
+  for (var key in obj) {
+    res[key] = obj[key];
   }
 
-  if (Json[clean] == false) {
-    Json_assign(s);
+  if (Json[clean] === false) {
+    assign_json(res);
   }
 
-  return s;
+  return res;
 };
 
 /**
@@ -94,7 +94,7 @@ Json.saveAs = function(object, file) {
     throw new Error('Error type');
   }
   FS.writeFileSync(file, JSON.stringify(object, 0, 2), {encoding: 'utf8'});
-}
+};
 
 
 /**
@@ -125,7 +125,7 @@ Json.merge = function(object, second, addonly) {
     }
   }
   return object;
-}
+};
 
 
 /**
@@ -154,18 +154,18 @@ Json.load = function(object, merge) {
       throw new Error('Not valid JSON');
     }
   }
-}
+};
 
 
 // Create new methods
-function Json_assign(object) {
+function assign_json(object) {
   // Save
   Object.defineProperty(object, '$$save', {
     enumerable: false,
     get: function() {
       var that = this;
       return function() {
-        return Json.save(that)
+        return Json.save(that);
       };
     }
   });
@@ -199,7 +199,7 @@ function Json_assign(object) {
       };
     }
   });
-}
+};
 
 
 module.exports = (function() {

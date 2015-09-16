@@ -90,7 +90,7 @@ describe('jsonsave', function(){
         }
       });
     });
-    
+
     var object = {id: 12, name: "John Snow", "second name": "Stark", "childs": ["first", "second"], "weapon": {name: "Knife"}};
     it('should create object '+JSON.stringify(object), function(){
       var js = json.new(object);
@@ -138,7 +138,7 @@ describe('jsonsave', function(){
       }).throw('Undefined type function');
     });
   });
-  
+
   describe('.$$saveAs', function(){
 
     var f = json.new({});
@@ -199,6 +199,5 @@ describe('jsonsave', function(){
       fs.unlinkSync(__dirname + '/save-test.json');
     });
   });
-
 
 });
