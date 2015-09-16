@@ -2,7 +2,7 @@
 
  [![NPM](https://nodei.co/npm/jsonsave.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/jsonsave/)
  
- ![Mocha Testing](https://img.shields.io/badge/build-passing-brightgreen.svg)
+ [![Build Status](https://travis-ci.org/LestaD/jsonsave.svg?branch=master)](https://travis-ci.org/LestaD/jsonsave)
  ![Dependencies](https://david-dm.org/lestad/jsonsave.svg)
  ![npm version](https://badge.fury.io/js/jsonsave.svg)
  ![Code Climate](https://codeclimate.com/github/LestaD/jsonsave/badges/gpa.svg)
