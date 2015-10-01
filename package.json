@@ -26,8 +26,8 @@
   "homepage": "https://github.com/LestaD/jsonsave#readme",
   "devDependencies": {
     "conlog": "0.0.9",
+    "should": "7.1.0",
     "mocha": "2.3.3",
-    "should": "6.0.3",
     "supertest": "1.1.0"
   }
 }
