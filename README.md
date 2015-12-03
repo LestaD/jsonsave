@@ -9,6 +9,7 @@
  ![Latest](https://img.shields.io/github/downloads/lestad/jsonsave/latest/total.svg)
  ![npm](https://img.shields.io/npm/dm/jsonsave.svg)
  ![GitHub tag](https://img.shields.io/github/tag/lestad/jsonsave.svg)
+ [![bitHound Overalll Score](https://www.bithound.io/github/LestaD/jsonsave/badges/score.svg)](https://www.bithound.io/github/LestaD/jsonsave)
  
 
 ## Usage
