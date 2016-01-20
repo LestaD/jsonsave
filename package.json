@@ -1,13 +1,11 @@
 {
   "name": "jsonsave",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "Simple open, edit and save .json files",
   "main": "bin/jsonsave.js",
   "scripts": {
     "test": "NODE_ENV=test ./node_modules/.bin/mocha -r should -R spec",
-    "clean-cov": "rm -rf coverage/ coverage.html",
-    "prepare-cov": "./node_modules/.bin/jscoverage --encoding=utf8 --no-highlight bin coverage",
-    "coverage": "npm run prepare-cov && COVERAGE=1 ./node_modules/.bin/mocha -r should -R html-cov > coverage.html"
+    "coverage": "istanbul cover node_modules/.bin/_mocha -- -r should -R spec"
   },
   "repository": {
     "type": "git",
@@ -26,8 +24,8 @@
   "homepage": "https://github.com/LestaD/jsonsave#readme",
   "devDependencies": {
     "conlog": "0.0.9",
-    "should": "7.1.1",
-    "mocha": "2.3.4",
+    "should": "^8.1.1",
+    "mocha": "^2.3.4",
     "supertest": "1.1.0"
   }
 }

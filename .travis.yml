@@ -1,7 +1,16 @@
 language: node_js
 node_js:
- - "0.12"
- - "iojs-v2.5.0"
+ - "0.12.0"
+ - "iojs-v1.0.4"
+ - "iojs-v2.1.0"
  - "iojs-v3.0.0"
  - "4.0.0"
- - "5.1.0"
+ - "5.4.1"
+sudo: false
+addons:
+  code_climate:
+    repo_token: a04506c123816612a23490aab11b2d7d1b0ce35654fb484659f6ad1e03fe3b1f
+after_script:
+  - npm i -g istanbul codeclimate-test-reporter
+  - npm run coverage
+  - codeclimate-test-reporter < ./coverage/lcov.info
