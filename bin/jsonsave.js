@@ -199,7 +199,7 @@ function assign_json(object) {
       };
     }
   });
-};
+}
 
 
 module.exports = (function() {
