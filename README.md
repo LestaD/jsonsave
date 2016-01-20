@@ -1,16 +1,14 @@
 # README
 
  [![NPM](https://nodei.co/npm/jsonsave.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/jsonsave/)
- 
+
  [![Build Status](https://travis-ci.org/LestaD/jsonsave.svg?branch=master)](https://travis-ci.org/LestaD/jsonsave)
  ![Dependencies](https://david-dm.org/lestad/jsonsave.svg)
- ![npm version](https://badge.fury.io/js/jsonsave.svg)
- ![Code Climate](https://codeclimate.com/github/LestaD/jsonsave/badges/gpa.svg)
- ![Latest](https://img.shields.io/github/downloads/lestad/jsonsave/latest/total.svg)
- ![npm](https://img.shields.io/npm/dm/jsonsave.svg)
- ![GitHub tag](https://img.shields.io/github/tag/lestad/jsonsave.svg)
+ [![npm version](https://badge.fury.io/js/jsonsave.svg)](https://www.npmjs.com/package/jsonsave)
+ [![Code Climate](https://codeclimate.com/github/LestaD/jsonsave/badges/gpa.svg)](https://codeclimate.com/github/LestaD/jsonsave)
+ [![Test Coverage](https://codeclimate.com/github/LestaD/jsonsave/badges/coverage.svg)](https://codeclimate.com/github/LestaD/jsonsave/coverage)
  [![bitHound Overalll Score](https://www.bithound.io/github/LestaD/jsonsave/badges/score.svg)](https://www.bithound.io/github/LestaD/jsonsave)
- 
+
 
 ## Usage
 You can open `.json` file, edit and save with simple methods
