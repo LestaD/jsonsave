@@ -1,6 +1,6 @@
 {
   "name": "jsonsave",
-  "version": "3.0.3",
+  "version": "3.0.4",
   "description": "Simple open, edit and save .json files",
   "main": "bin/jsonsave.js",
   "scripts": {
